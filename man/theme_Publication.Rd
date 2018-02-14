@@ -4,7 +4,9 @@
 \alias{theme_Publication}
 \title{theme for ggplot}
 \usage{
-theme_Publication(base_size = 14, base_family = "Calibri")
+theme_Publication(base_size = 14, base_family = "Calibri",
+  x.text.angle = 0, border = FALSE, margin = TRUE, legend = c("top",
+  "bottom", "left", "right", "none"), spacing = 0.5)
 }
 \arguments{
 \item{base_size}{letter size}
