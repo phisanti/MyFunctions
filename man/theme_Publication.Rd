@@ -5,13 +5,21 @@
 \title{theme for ggplot}
 \usage{
 theme_Publication(base_size = 14, base_family = "Calibri",
-  x.text.angle = 0, border = FALSE, margin = TRUE, legend = c("top",
-  "bottom", "left", "right", "none"), spacing = 0.5)
+  x.text.angle = 0, border = FALSE, margin = TRUE,
+  legend = c("top", "bottom", "left", "right", "none"), spacing = 0.5)
 }
 \arguments{
 \item{base_size}{letter size}
 
 \item{base_family}{leter type}
+
+\item{x.text.angle}{Inclination of X labels}
+
+\item{border}{Border of the box}
+
+\item{legend}{Location of the legend with a value "top", "bottom", "left", "right", "none"}
+
+\item{spacing}{Sparation between facets in case there are}
 }
 \description{
 The theme_Publication generates like-publication graphs using the ggplot environment
