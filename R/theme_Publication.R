@@ -2,6 +2,10 @@
 #' @description The theme_Publication generates like-publication graphs using the ggplot environment
 #' @param base_size letter size
 #' @param base_family leter type
+#' @param x.text.angle Inclination of X labels
+#' @param border Border of the box
+#' @param legend Location of the legend with a value "top", "bottom", "left", "right", "none"
+#' @param spacing Sparation between facets in case there are
 #'
 #' @author Santiago Caño-Muñiz
 #' @export
@@ -15,16 +19,16 @@ theme_Publication <- function(base_size=14, base_family="Calibri", x.text.angle 
     xhjust <- 1
   else xhjust <- NULL
   if (border) {
-    panel.border <- element_rect(fill = NA, colour = "black",
+    panel.border <- ggplot2::element_rect(fill = NA, colour = "black",
                                  size = 0.7)
-    axis.line <- element_blank()
+    axis.line <- ggplot2::element_blank()
   }
   else {
-    panel.border <- element_blank()
-    axis.line = element_line(colour = "black", size = 0.5)
+    panel.border <- ggplot2::element_blank()
+    axis.line = ggplot2::element_line(colour = "black", size = 0.5)
   }
   if (margin)
-    plot.margin <- margin(half_line, half_line, half_line,
+    plot.margin <- ggplot2::margin(half_line, half_line, half_line,
                           half_line)
   else plot.margin <- unit(c(0.5, 0.3, 0.3, 0.3), "mm")
   .theme <- ggthemes::theme_foundation(base_size=base_size, base_family=base_family) +
