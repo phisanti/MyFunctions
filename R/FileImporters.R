@@ -12,9 +12,9 @@
 
 Plate_reader <- function(file_list = file_list, wl = wl, Rows = Rows, Columns = Columns){
   D <- purrr::map(file_list,function(i,wl,Rows,Columns){
-    names <- read.delim(file = paste0(path,i), header=F, skip=2,nrows = 1,stringsAsFactors = F)
+    names <- utils::read.delim(file = paste0(path,i), header=F, skip=2,nrows = 1,stringsAsFactors = F)
     names <- names[-99]
-    tmp <- read.delim(file = paste0(path,i), header=F, skip=3)
+    tmp <- utils::read.delim(file = paste0(path,i), header=F, skip=3)
     tmp <- tmp[-nrow(tmp),]
     tmp <- select(tmp,-V99)
     colnames(tmp) <- names[1,]

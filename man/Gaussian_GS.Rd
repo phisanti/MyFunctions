@@ -4,7 +4,7 @@
 \alias{Gaussian_GS}
 \title{Gibbs Sampling from a normal distribution}
 \usage{
-Gaussian_GS(x, niter = 2000, prior.mu = 0, prior.sd = 1)
+Gaussian_GS(x, niter = 2000, prior.mu = 0, prior.sd = 1, burn.in = 200)
 }
 \arguments{
 \item{x}{Numeric vector}

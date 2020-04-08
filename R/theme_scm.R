@@ -10,7 +10,7 @@
 #' @author Santiago Caño-Muñiz
 #' @export
 
-theme_stylish <- function(base_size = 15, base_family = "Calibri", x.text.angle = 0, border = FALSE,
+theme_scm <- function(base_size = 15, base_family = "Calibri", x.text.angle = 0, border = FALSE,
                               margin = TRUE, legend = c("top", "bottom", "left", "right", "none"), spacing = 0.5) {
   half_line <- base_size/2
   if (!is.numeric(legend))
