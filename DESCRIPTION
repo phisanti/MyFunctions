@@ -1,12 +1,14 @@
 Package: MyFunctions
 Type: Package
 Title: My Functions
-Version: 0.1.0
+Version: 0.2.0
+YEAR: 2020
 Author: Santiago Caño-Muñiz
 Maintainer: Santiago Caño-Muñiz <tisalon@outlook.com>
 Description: The package contains frequently used functions
 Encoding: UTF-8
 LazyData: true
-importFrom: "stats", "coef", "dnorm", "median" "utils", "read.delim", "Rcpp", "ggplot2", "RcppArmadillo", "RcppEigen"
-RoxygenNote: 6.0.1
-LinkingTo: Rcpp
+Depends: R (>= 3.0.2)
+Imports: stats, data.table, utils, ggplot2, extrafont
+RoxygenNote: 7.1.0
+License: GPL-3 LICENCE
