@@ -4,8 +4,7 @@
 \alias{Plate_reader}
 \title{Data importer from plate reader}
 \usage{
-Plate_reader(file_list = file_list, wl = wl, Rows = Rows,
-  Columns = Columns)
+Plate_reader(file_list = file_list, wl = wl, Rows = Rows, Columns = Columns)
 }
 \arguments{
 \item{file_list}{a list with the file paths in format .txt to be imported}

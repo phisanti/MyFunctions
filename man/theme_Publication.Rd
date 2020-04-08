@@ -4,9 +4,15 @@
 \alias{theme_Publication}
 \title{theme for ggplot}
 \usage{
-theme_Publication(base_size = 14, base_family = "Calibri",
-  x.text.angle = 0, border = FALSE, margin = TRUE,
-  legend = c("top", "bottom", "left", "right", "none"), spacing = 0.5)
+theme_Publication(
+  base_size = 14,
+  base_family = "Arial",
+  x.text.angle = 0,
+  border = FALSE,
+  margin = TRUE,
+  legend = c("top", "bottom", "left", "right", "none"),
+  spacing = 0.5
+)
 }
 \arguments{
 \item{base_size}{letter size}
@@ -22,7 +28,7 @@ theme_Publication(base_size = 14, base_family = "Calibri",
 \item{spacing}{Sparation between facets in case there are}
 }
 \description{
-The theme_Publication generates like-publication graphs using the ggplot environment
+Theme inspired in the Adnres publication style.
 }
 \author{
 Santiago Caño-Muñiz
