@@ -4,10 +4,12 @@
 \alias{se}
 \title{Standard error}
 \usage{
-se(x)
+se(x, na.rm = FALSE)
 }
 \arguments{
 \item{x}{numeric vector}
+
+\item{na.rm}{logig: Remove NA elements from the vector.}
 }
 \description{
 Calculates the standard error as: \deqn{(SE=\frac{\sigma }{\sqrt{n}})}
