@@ -8,7 +8,7 @@
 #' @export
 
 
-mround <- function(x, base = 5){
+round_nearest <- function(x, base = 5){
 
   n <- base*round(x/base)
   return(n)
