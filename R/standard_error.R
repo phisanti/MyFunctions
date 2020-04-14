@@ -7,4 +7,4 @@
 #'
 #' @export
 
-se <- function(x){stats::sd(x)/sqrt(length(x))}
+se <- function(x, na.rm = FALSE){stats::sd(x, na.rm = )/sqrt(length(x))}
