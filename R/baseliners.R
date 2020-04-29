@@ -16,22 +16,21 @@
 find_baseline <- function(x, n_points = 20L, k = 5L) {
 
   steps <- 1:length(x)
-  tmp <- baseline <- data.table::data.table(x, steps)
+  tmp <- baseline <- data.frame(x, steps)
 
-  baseline[, ref := 1:.N]
   k <- k
   min_index <- rep(0, n_points)
 
   for(i in seq_along(min_index)) {
 
     if (sum(!is.na(baseline$x)) > 1) {
-    N_min_point <- baseline[x == min(x, na.rm = T), ref]
+    N_min_point <- baseline$steps[which.min(baseline$x)]
     min_index[i] <- N_min_point
-    baseline[max(0, N_min_point - k) : min(nrow(baseline), N_min_point + k)] <- NA
+    baseline[max(0, N_min_point - k) : min(nrow(baseline), N_min_point + k),] <- NA
     }
   }
 
-  m <- lm(x ~ steps, tmp[min_index])
+  m <- lm(x ~ steps, tmp[min_index,])
 
   out <- list(baseline = predict(m, newdata = tmp))
   out$resid <- x - out$baseline
