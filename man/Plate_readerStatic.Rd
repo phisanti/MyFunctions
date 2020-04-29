@@ -17,6 +17,8 @@ Plate_readerStatic(
 
 \item{wl}{vector with all the wavelenght measured}
 
+\item{tp}{an integer with the total number of time points}
+
 \item{Rows}{a list containing "n" vectors of lenght 8 with all the conditions across rows in the plate}
 
 \item{Columns}{a list containing "n" vectors of lenght 12 with all the conditions across columns in the plate}

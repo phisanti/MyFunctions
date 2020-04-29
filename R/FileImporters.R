@@ -2,7 +2,6 @@
 #' @description Function to import the reads of a time serie from the plate reader at the Dr Summers Lab.
 #' @param file_list a list with the file paths in format .txt to be imported
 #' @param wl vector with all the wavelenght measured
-#' @param tp an integer with the total number of time points
 #' @param Columns a list containing "n" vectors of lenght 12 with all the conditions across columns in the plate
 #' @param Rows a list containing "n" vectors of lenght 8 with all the conditions across rows in the plate
 #'
@@ -57,6 +56,7 @@ Plate_reader <- function(file_list = file_list, wl = wl, Rows = Rows, Columns = 
 #' @description Function to import the reads from the plate reader at the Dr Summers Lab excluding the time variable
 #' @param file_list a list with the file paths in format .txt to be imported
 #' @param wl vector with all the wavelenght measured
+#' @param tp an integer with the total number of time points
 #' @param Columns a list containing "n" vectors of lenght 12 with all the conditions across columns in the plate
 #' @param Rows a list containing "n" vectors of lenght 8 with all the conditions across rows in the plate
 ##'
@@ -67,7 +67,7 @@ Plate_reader <- function(file_list = file_list, wl = wl, Rows = Rows, Columns = 
 
 #Static plate reader importer
 
-Plate_readerStatic <- function(file_list=file_list,wl=wl,tp=tp,Rows=Rows,Columns=Columns){
+Plate_readerStatic <- function(file_list = file_list, wl = wl ,tp = tp, Rows = Rows, Columns = Columns){
   D <- purrr::map(file_list,function(i,wl,tp,Rows,Columns){
     # Import data
     names <- read.delim(file = paste0(path,i), header=F, skip=2,nrows = 1,stringsAsFactors = F)
@@ -113,7 +113,7 @@ Plate_readerStatic <- function(file_list=file_list,wl=wl,tp=tp,Rows=Rows,Columns
 
 
 
-Fl_PlateReader <- function(file_list=file_list,Rows=Rows,Columns=Columns){
+Fl_PlateReader <- function(file_list = file_list, Rows = Rows, Columns = Columns){
   D <- purrr::map(file_list,function(i){
     sheets <- readxl::excel_sheets(paste0(path,i))
     short_path <- gsub(paste0(wd,"/"), "", path)

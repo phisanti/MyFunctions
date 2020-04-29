@@ -14,8 +14,6 @@ Plate_reader(file_list = file_list, wl = wl, Rows = Rows, Columns = Columns)
 \item{Rows}{a list containing "n" vectors of lenght 8 with all the conditions across rows in the plate}
 
 \item{Columns}{a list containing "n" vectors of lenght 12 with all the conditions across columns in the plate}
-
-\item{tp}{an integer with the total number of time points}
 }
 \value{
 "D" a data.table containing all the reads, times, and conditions
