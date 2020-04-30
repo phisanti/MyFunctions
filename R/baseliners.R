@@ -18,7 +18,8 @@
 #' @importFrom stats resid
 #'
 #' @examples
-#'  x <- rnorm(500)
+#'
+#' x <- rnorm(500)
 #' x <- x + 5* exp(-(1:500 - 200)^2/20) +
 #'   5* exp(-(1:500 - 100)^2/20) +
 #'   5* exp(-(1:500 - 400)^2/20)
@@ -40,7 +41,7 @@ find_baseline <- function(x, n_points = 20L, k = 5L, filter_lows = TRUE) {
   if (filter_lows) {
 
     m0 <- lm(x ~ steps, tmp)
-    baseline[resid(m0) <0,] <- NA
+    baseline[resid(m0) >0,] <- NA
 
   }
 
