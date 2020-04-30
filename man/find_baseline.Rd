@@ -4,14 +4,17 @@
 \alias{find_baseline}
 \title{Signal baseline}
 \usage{
-find_baseline(x, n_points = 20L, k = 5L)
+find_baseline(x, n_points = 20L, k = 5L, filter_lows = TRUE)
 }
 \arguments{
-\item{x}{numeric: time series to find the baseline.}
+\item{x}{`numeric`: time series to find the baseline.}
 
-\item{n_points}{integer: number of points to calculate the baseline.}
+\item{n_points}{`integer`: number of points to calculate the baseline.}
 
-\item{k}{integer: number of points to clear each iteration.}
+\item{k}{`integer`: number of points to clear each iteration.}
+
+\item{filter_lows}{`logic`: whether or do a linear fitting to remove values
+above the trend.}
 }
 \description{
 Function to find the reference baseline in a
@@ -20,4 +23,16 @@ fluorescence traceplot. The algorithm operates as follows:
 - Second, removes $k$-neightbours before and after.
 - Third repeats $n$-times.
 - Fourth, fit a linear regression line to the filtered points.
+}
+\examples{
+ x <- rnorm(500)
+x <- x + 5* exp(-(1:500 - 200)^2/20) +
+  5* exp(-(1:500 - 100)^2/20) +
+  5* exp(-(1:500 - 400)^2/20)
+plot(x, type = "b", pch = 16)
+
+example <- find_baseline(x)
+
+lines(example$baseline, col = "red")
+
 }

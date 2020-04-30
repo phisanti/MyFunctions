@@ -1,8 +1,10 @@
 #' @title My color set.
 #'
 #' @description My own personalised set of colours. Original code from Simon Jackson (twitter:
-#' [at]drsimonj, https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2)
+#' [at]drsimonj, https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
 #'
+#' @param `...` `character`: One of my defined coulurs in the palette. Currently, "light grey",
+#' "blue", "green", "orange", "yellow", "red", "dark grey"
 #' @author Santiago Caño-Muñiz
 #'
 #' @export
@@ -47,6 +49,7 @@ my_palettes <- list(
 #'
 #' @author Santiago Caño-Muñiz
 #'
+#' @inheritDotParams grDevices::colorRampPalette
 #' @param palette char: Name of the colour set. Currently: "contrast", "main", "cool", "hot", "mixed" and "grey".
 #' @param reverse Logical. Should the order of the colors be reversed?
 #'
@@ -58,14 +61,19 @@ get_mypalette <- function(palette = "main", reverse = FALSE, ...) {
 
   if (reverse) pal <- rev(pal)
 
-  colorRampPalette(pal, ...)
+  grDevices::colorRampPalette(pal, ...)
 }
 
-#' @title My palette for ggplot2.
+#' @title My palette wrapper for ggplot2.
 #'
 #' @description See link[MyFunctions]{get_mypalette}
 #'
+#' @inheritDotParams ggplot2::scale_color_gradientn
+#' @param palette `character`: Name of the colour set. Currently: "contrast", "main", "cool", "hot", "mixed" and "grey".
+#' @param reverse `logical`: Should the order of the colors be reversed?
+#' @param discrete `logical`: selects palette for continuous or discrete data
 #' @author Santiago Caño-Muñiz
+#' @rdname scale_color_santi
 #' @export
 #'
 
@@ -73,20 +81,21 @@ scale_color_santi <- function(palette = "main", discrete = TRUE, reverse = FALSE
   pal <- get_mypalette(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("colour", paste0("drsimonj_", palette), palette = pal, ...)
+    ggplot2::discrete_scale("colour", paste0("drsimonj_", palette), palette = pal, ...)
   } else {
-    scale_color_gradientn(colours = pal(256), ...)
+    ggplot2::scale_color_gradientn(colours = pal(256), ...)
   }
 }
 
+#' @rdname scale_color_santi
 #' @export
 
 scale_fill_santi <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- get_mypalette(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("drsimonj_", palette), palette = pal, ...)
+    ggplot2::discrete_scale("fill", paste0("drsimonj_", palette), palette = pal, ...)
   } else {
-    scale_fill_gradientn(colours = pal(256), ...)
+    ggplot2::scale_fill_gradientn(colours = pal(256), ...)
   }
 }

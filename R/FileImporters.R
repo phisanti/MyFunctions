@@ -7,7 +7,9 @@
 #'
 #' @return "D" a data.table containing all the reads, times, and conditions
 #' @author Santiago Caño-Muñiz
+#' @importFrom data.table `:=`
 #' @export
+
 
 Plate_reader <- function(file_list = file_list, wl = wl, Rows = Rows, Columns = Columns){
   D <- purrr::map(file_list,function(i,wl,Rows,Columns){
@@ -47,7 +49,7 @@ Plate_reader <- function(file_list = file_list, wl = wl, Rows = Rows, Columns = 
                    x[1]+x[2]/60+x[3]/3600
                  }
   )
-  D <- data.table(D)
+  D <- data.table::data.table(D)
   D <- D[,`Time(hh:mm:ss)`:=NULL]
   return(D)
 }
@@ -121,7 +123,7 @@ Fl_PlateReader <- function(file_list = file_list, Rows = Rows, Columns = Columns
     book_tmp <- purrr::map(sheets, function(n,Rows,Columns){
       tmp <- read_excel(paste0(short_path,i),
                         sheet = n, skip = 1)
-      tmp <- data.table(tmp)
+      tmp <- data.table::data.table(tmp)
       tmp <- reshape2::melt(tmp, id.vars=c("Kinetic read"),var='Cell')
       tmp$sheet <- n
       tmp <- data.frame(tmp)

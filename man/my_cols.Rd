@@ -6,9 +6,13 @@
 \usage{
 my_cols(...)
 }
+\arguments{
+\item{`...`}{`character`: One of my defined coulurs in the palette. Currently, "light grey",
+"blue", "green", "orange", "yellow", "red", "dark grey"}
+}
 \description{
 My own personalised set of colours. Original code from Simon Jackson (twitter:
-[at]drsimonj, https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2)
+[at]drsimonj, https://drsimonj.svbtle.com/creating-corporate-colour-palettes-for-ggplot2).
 }
 \author{
 Santiago Caño-Muñiz

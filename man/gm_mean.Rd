@@ -7,7 +7,9 @@
 gm_mean(x, na.rm = TRUE)
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{`numeric`: vector to calculate the geometric mean.}
+
+\item{na.rm}{`logic`: should NA values be removed.}
 }
 \description{
 Generic function to calculate the geometric mean of a vector. The geometric mean is defined as the nth root of the product of n numbers:

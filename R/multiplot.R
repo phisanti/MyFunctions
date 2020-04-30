@@ -1,17 +1,18 @@
 #' @title Multiple plot function
+#'
 #' @description The function can pass multiple plots in a list format and diplay in as one plot
-#' @param plotlist a list of ggplot objects
-#' @param cols Number of columns in layout
-#' @param layout A matrix specifying the layout. If present, 'cols' is ignored.If the layout is something like
+#'
+#' @param plotlist a list of ggplot objects.
+#' @param cols Number of columns in layout.
+#' @param layout A matrix specifying the layout. If present, 'cols' is ignored.If the layout is something like.
 #' matrix(c(1,2,3,3), nrow=2, byrow=TRUE), then plot 1 will go in the upper left, 2 will go in the upper right, and
-# 3 will go all the way across the bottom.
+#' 3 will go all the way across the bottom.
 #'
 #' @author Santiago Caño-Muñiz
 #' @export
 
 
-multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
-  library(grid)
+multiplot <- function(..., plotlist = NULL, cols=1, layout = NULL) {
 
   # Make a list from the ... arguments and plotlist
   plots <- c(list(...), plotlist)
@@ -32,16 +33,16 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
 
   } else {
     # Set up the page
-    grid.newpage()
-    pushViewport(viewport(layout = grid::grid.layout(nrow(layout), ncol(layout))))
+    grid::grid.newpage()
+    grid::pushViewport(grid::viewport(layout = grid::grid.layout(nrow(layout), ncol(layout))))
 
     # Make each plot, in the correct location
     for (i in 1:numPlots) {
       # Get the i,j matrix positions of the regions that contain this subplot
       matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
 
-      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
-                                      layout.pos.col = matchidx$col))
+      print(plots[[i]], vp = grid::viewport(layout.pos.row = matchidx$row,
+                                            layout.pos.col = matchidx$col))
     }
   }
 }

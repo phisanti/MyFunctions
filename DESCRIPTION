@@ -8,7 +8,8 @@ Maintainer: Santiago Caño-Muñiz <tisalon@outlook.com>
 Description: The package contains frequently used functions
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 3.0.2)
-Imports: stats, data.table, utils, ggplot2, extrafont
+Depends: R (>= 3.6)
+Imports: stats, data.table, utils, grid, ggplot2, extrafont
+Suggest: flowCore
 RoxygenNote: 7.1.0
-License: GPL-3 LICENCE
+License: GPL-3

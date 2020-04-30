@@ -5,6 +5,9 @@
 #' @param m Independent variable
 #' @return a character expression in the form "y = b*x + a"
 #' @author Santiago Caño-Muñiz
+#'
+#' @importFrom stats coef
+#' @importFrom stats lm
 #' @export
 
 lm_eq <- function(x, y, m = NULL){

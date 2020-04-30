@@ -4,7 +4,7 @@
 \alias{fsApply_1col}
 \title{Apply function over columns in a flowSet}
 \usage{
-fsApply_1col(x, y = "FSC", FUN = median(), ...)
+fsApply_1col(x, y = "FSC", FUN = stats::median(), ...)
 }
 \arguments{
 \item{x}{flowSet to be used}
@@ -16,7 +16,7 @@ fsApply_1col(x, y = "FSC", FUN = median(), ...)
 \description{
 like many of the apply-style functions in R acts as an iterator for flowSet objects, allowing the
 application of a function to either the flowFrame or the data matrix itself. The output can the be reconstructed
-as either a flowSet, a list or a matrix depending on options and the type of objects returned..
+as either a flowSet, a list or a matrix depending on options and the type of objects returned.
 }
 \author{
 Santiago Caño-Muñiz

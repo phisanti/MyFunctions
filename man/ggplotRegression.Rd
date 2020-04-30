@@ -7,9 +7,7 @@
 ggplotRegression(m)
 }
 \arguments{
-\item{base_size}{letter size}
-
-\item{base_family}{leter type}
+\item{m}{Object type lm with only one simple regressor.}
 }
 \description{
 Plot the equation of simple linear models generated with lm.

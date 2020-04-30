@@ -10,6 +10,13 @@ get_mypalette(palette = "main", reverse = FALSE, ...)
 \item{palette}{char: Name of the colour set. Currently: "contrast", "main", "cool", "hot", "mixed" and "grey".}
 
 \item{reverse}{Logical. Should the order of the colors be reversed?}
+
+\item{...}{
+  Arguments passed on to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette}}
+  \describe{
+    \item{\code{colors}}{colors to interpolate; must be a valid argument to
+    \code{\link[grDevices]{col2rgb}()}.}
+  }}
 }
 \description{
 Wrapper function to call the colours from my palettes. Original code from Simon Jackson (twitter:

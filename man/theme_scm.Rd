@@ -15,20 +15,22 @@ theme_scm(
 )
 }
 \arguments{
-\item{base_size}{letter size}
+\item{base_size}{letter size.}
 
-\item{base_family}{leter type}
+\item{base_family}{leter type.}
 
-\item{x.text.angle}{Inclination of X labels}
+\item{x.text.angle}{Inclination of X labels.}
 
-\item{border}{Border of the box}
+\item{border}{Border of the box.}
 
-\item{legend}{Location of the legend with a value "top", "bottom", "left", "right", "none"}
+\item{margin}{Add space between multi-facetted plots.}
 
-\item{spacing}{Sparation between facets in case there are}
+\item{legend}{Location of the legend with a value "top", "bottom", "left", "right", "none".}
+
+\item{spacing}{Sparation between facets in case there are.}
 }
 \description{
-Helper function to create like-publication graphs using the ggplot environment
+Helper function to create like-publication graphs using the ggplot environment.
 }
 \author{
 Santiago Caño-Muñiz

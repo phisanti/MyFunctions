@@ -1,7 +1,7 @@
 #' @title Linear model equations
+#'
 #' @description Plot the equation of simple linear models generated with lm.
-#' @param base_size letter size
-#' @param base_family leter type
+#' @param m Object type lm with only one simple regressor.
 #'
 #' @author Santiago Caño-Muñiz
 #' @export
@@ -10,6 +10,7 @@
 #plot regression equation
 
 ggplotRegression <- function (m) {
+
   eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,
                    list(a = format(coef(m)[1], digits = 2),
                         b = format(coef(m)[2], digits = 2),
