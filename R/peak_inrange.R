@@ -19,7 +19,7 @@ peak_inrange <- function(x, n1 = 100L, n2 = 10L, peak_loc) {
 
   . <- Frame <- peakID <- peak <- NULL
   # Fill NA
-  x <- data.table::nafill(x, fill = 0)
+  x <- data.table::nafill(x, fill = min(x))
 
   # Determine peak/valley with cross of EMA
   slow_s <- stats::HoltWinters(x, gamma = FALSE, beta = FALSE, alpha = 1/(n1 + 1))
