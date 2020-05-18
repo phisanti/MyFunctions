@@ -51,16 +51,16 @@ theme_Publication <- function(base_size = 14, base_family = "Arial", x.text.angl
                    panel.grid.minor = ggplot2::element_blank(),
                    legend.key = ggplot2::element_rect(colour = NA),
                    legend.position = legend,
-                   legend.key.size= unit(0.2, "cm"),
-                   panel.spacing  = unit(spacing, "cm"),
+                   legend.key.size= ggplot2::unit(0.2, "cm"),
+                   panel.spacing  = ggplot2::unit(spacing, "cm"),
                    legend.title = ggplot2::element_text(face="italic"),
                    plot.margin = plot.margin,
                    strip.background = ggplot2::element_rect(colour = NA, fill = NA),
                    strip.text = ggplot2::element_text(face="bold")
     )
   if (x.text.angle != 0)
-    .theme <- .theme + ggplot2::theme(axis.text.x = element_text(angle = x.text.angle,
-                                                                 hjust = xhjust))
+    .theme <- .theme + ggplot2::theme(axis.text.x = ggplot2::element_text(angle = x.text.angle,
+                                                                          hjust = xhjust))
   .theme
 
 }

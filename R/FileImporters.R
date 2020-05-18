@@ -117,12 +117,13 @@ Plate_readerStatic <- function(file_list = file_list, wl = wl ,tp = tp, Rows = R
 
 Fl_PlateReader <- function(file_list = file_list, Rows = Rows, Columns = Columns){
   D <- purrr::map(file_list,function(i){
+    wd <- getwd()
     sheets <- readxl::excel_sheets(paste0(path,i))
     short_path <- gsub(paste0(wd,"/"), "", path)
     #import sheets individually
     book_tmp <- purrr::map(sheets, function(n,Rows,Columns){
-      tmp <- read_excel(paste0(short_path,i),
-                        sheet = n, skip = 1)
+      tmp <- readxl::read_excel(paste0(short_path,i),
+                                sheet = n, skip = 1)
       tmp <- data.table::data.table(tmp)
       tmp <- reshape2::melt(tmp, id.vars=c("Kinetic read"),var='Cell')
       tmp$sheet <- n
