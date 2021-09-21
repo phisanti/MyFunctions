@@ -12,7 +12,7 @@ get_mypalette(palette = "main", reverse = FALSE, ...)
 \item{reverse}{Logical. Should the order of the colors be reversed?}
 
 \item{...}{
-  Arguments passed on to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette}}
+  Arguments passed on to \code{\link[grDevices:colorRamp]{grDevices::colorRampPalette}}
   \describe{
     \item{\code{colors}}{colors to interpolate; must be a valid argument to
     \code{\link[grDevices]{col2rgb}()}.}

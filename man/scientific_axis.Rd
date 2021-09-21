@@ -4,10 +4,12 @@
 \alias{scientific_axis}
 \title{Scientific axis}
 \usage{
-scientific_axis(x)
+scientific_axis(x, base = 10)
 }
 \arguments{
-\item{x}{numeric vector to be transform}
+\item{x}{numeric: vector to be transform}
+
+\item{base}{integer: Base for the exponent}
 }
 \description{
 Transform a numeric vector into a character expression in scietific format

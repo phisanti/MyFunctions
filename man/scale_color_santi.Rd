@@ -17,7 +17,7 @@ scale_fill_santi(palette = "main", discrete = TRUE, reverse = FALSE, ...)
 \item{reverse}{`logical`: Should the order of the colors be reversed?}
 
 \item{...}{
-  Arguments passed on to \code{\link[ggplot2:scale_color_gradientn]{ggplot2::scale_color_gradientn}}
+  Arguments passed on to \code{\link[ggplot2:scale_gradient]{ggplot2::scale_color_gradientn}}
   \describe{
     \item{\code{space}}{colour space in which to calculate gradient. Must be "Lab" -
 other values are deprecated.}

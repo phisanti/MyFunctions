@@ -11,5 +11,5 @@ LazyData: true
 Depends: R (>= 3.6)
 Imports: stats, data.table, utils, grid, ggplot2, extrafont
 Suggest: flowCore
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.2
 License: GPL-3
